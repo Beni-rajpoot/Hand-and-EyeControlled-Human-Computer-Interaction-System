@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Login - AI HCI Controller</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Back to portal">
+      <span class="brand-mark">AI</span>
+      <span>
+        <strong>Admin Login</strong>
+        <small>Secure dashboard access</small>
+      </span>
+    </a>
+    <nav aria-label="Login navigation">
+      <a href="index.html">Public page</a>
+    </nav>
+  </header>
+
+  <main class="login-main">
+    <section class="login-card panel">
+      <p class="eyebrow">Admin only</p>
+      <h1>Sign in to dashboard</h1>
+      <p>Use the demo admin credentials to view portal users, downloads, and ratings.</p>
+
+      <form id="adminLoginForm">
+        <label>
+          Email
+          <input id="adminEmail" type="email" autocomplete="username" placeholder="admin@gmail.com" required>
+        </label>
+        <label>
+          Password
+          <input id="adminPassword" type="password" autocomplete="current-password" placeholder="admin@123" required>
+        </label>
+        <button type="submit">Login</button>
+        <p id="adminLoginMessage" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Demo credentials are for classroom testing only.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
