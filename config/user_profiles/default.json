@@ -1,0 +1,21 @@
+{
+  "profile_name": "Hand Only",
+  "smooth_alpha": 0.3,
+  "hand_weight": 1.0,
+  "detection_confidence": 0.7,
+  "tracking_confidence": 0.5,
+  "click_cooldown": 0.7,
+  "dwell_enabled": false,
+  "dwell_seconds": 1.5,
+  "camera_index": 0,
+  "gaze_calibration": {
+    "min_x": 0.35,
+    "max_x": 0.65,
+    "min_y": 0.3,
+    "max_y": 0.7
+  },
+  "active_modules": {
+    "hand": true,
+    "eye": false
+  }
+}
