@@ -1,4 +1,4 @@
-# AI-Powered Hand & Eye HCI Controller
+#  Hand & Eye HCI Controller
 
 Control your Windows PC using **hand gestures** and **eye gaze** — no mouse, no keyboard.
 
