@@ -1,6 +1,8 @@
-opencv-python==4.8.1.78
+# Supported classroom setup: Windows 10/11 with Python 3.10 or 3.11.
+# Keep numpy below 2 because MediaPipe/OpenCV wheels can break with numpy 2.x.
+numpy>=1.26.0,<2.0
 mediapipe==0.10.21
-pyautogui==0.9.54
-PyQt5==5.15.0
-numpy==1.26.2
-pywin32==306
+opencv-contrib-python>=4.8.1,<4.12
+PyQt5>=5.15.10,<5.16
+pyautogui>=0.9.54,<1.0
+pywin32>=306; platform_system == "Windows"
