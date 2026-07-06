@@ -1,0 +1,27 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Local runtime/cache
+.matplotlib/
+config/user_profiles/*.json
+!config/user_profiles/.gitkeep
+
+# Build outputs
+build/
+dist/
+*.spec
+web/downloads/*.exe
+web/downloads/*.zip
+
+# IDE/OS
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log

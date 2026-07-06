@@ -454,26 +454,10 @@ class MainWindow(QMainWindow):
         else:
             self.setup_camera.setText("Camera: none found")
             self.statusBar().showMessage("No camera found", 4000)
-            QMessageBox.warning(
-                self,
-                "No camera found",
-                "No camera could be detected.\n\nPlease check that a webcam is connected "
-                "and not being used by another application, then try again.",
-            )
+
     def _on_start(self):
         self._on_save()
-        try:
-            self.engine = ProcessingEngine(self.config, *self._screen)
-        except Exception as exc:
-            QMessageBox.critical(
-                self,
-                "Unable to start tracking",
-                f"Tracking could not be started.\n\nDetails: {exc}",
-            )
-            self.setup_actions.setText("Actions: failed to start")
-            self.statusBar().showMessage("Failed to start tracking", 4000)
-            return
-
+        self.engine = ProcessingEngine(self.config, *self._screen)
         self.engine.frame_ready.connect(self._update_frame)
         self.engine.status_ready.connect(self._update_status)
         self.engine.finished.connect(self._on_engine_finished)
@@ -590,9 +574,8 @@ class MainWindow(QMainWindow):
         if "error" in status:
             self.statusBar().showMessage(status["error"])
             self.setup_camera.setText("Camera: error")
-            QMessageBox.critical(self, "Tracking error", status["error"])
             self._on_engine_finished()
-            return 
+            return
 
         self.st_fps.set_value(status.get("fps", "-"))
         self.st_gesture.set_value(status.get("gesture", "-"))
