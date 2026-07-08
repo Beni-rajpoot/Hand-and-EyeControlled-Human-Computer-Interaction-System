@@ -209,7 +209,8 @@ class MainWindow(QMainWindow):
         tabs.addTab(self._build_settings_tab(), "Settings")
         tabs.addTab(self._build_calibration_tab(), "Calibration")
         tabs.addTab(self._build_setup_tab(), "Setup")
-        tabs.addTab(self._build_practice_tab(), "Practice")
+        # TODO: Add practice tab when ready
+        # tabs.addTab(self._build_practice_tab(), "Practice")
         tabs.addTab(self._build_gestures_tab(), "Gestures")
         root.addWidget(tabs)
 

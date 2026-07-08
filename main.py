@@ -1,5 +1,5 @@
 """
-main.py — Entry point for AI Hand & Eye HCI Controller
+main.py — Entry point for Hand & Eye HCI Controller
 Run: python main.py
 """
 import sys
