@@ -9,13 +9,13 @@
   "dwell_seconds": 1.5,
   "camera_index": 0,
   "gaze_calibration": {
-    "min_x": 0.35,
-    "max_x": 0.65,
-    "min_y": 0.3,
-    "max_y": 0.7
+    "min_x": 0.6,
+    "max_x": 1.0,
+    "min_y": 0.7,
+    "max_y": 0.9
   },
   "active_modules": {
     "hand": true,
-    "eye": true
+    "eye": false
   }
 }
