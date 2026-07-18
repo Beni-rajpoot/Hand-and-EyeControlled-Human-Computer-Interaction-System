@@ -57,7 +57,7 @@ class HandTracker:
             self.mp_draw.DrawingSpec(color=(0, 255, 170), thickness=2, circle_radius=3),
             self.mp_draw.DrawingSpec(color=(0, 200, 130), thickness=1),
         )
-
+        # Extract cursor position and classify gesture
         cursor_x = lm[self.INDEX_TIP].x
         cursor_y = lm[self.INDEX_TIP].y
         gesture, scroll_delta = self._classify_gesture(lm)
@@ -69,7 +69,7 @@ class HandTracker:
             gesture=gesture,
             scroll_delta=scroll_delta,
         )
-
+        
     def _finger_up(self, lm, tip: int, pip: int) -> bool:
         return lm[tip].y < lm[pip].y
 
