@@ -27,14 +27,10 @@ function updateDownloadState() {
   if (!downloadBtn || !gate) return;
 
   const data = loadData();
-  if (data.activeUserEmail && releaseAvailable) {
+  if (data.activeUserEmail) {
     downloadBtn.classList.remove("disabled");
     downloadBtn.href = DOWNLOAD_URL;
     gate.textContent = `Download unlocked for ${data.activeUserEmail}.`;
-  } else if (data.activeUserEmail) {
-    downloadBtn.classList.add("disabled");
-    downloadBtn.href = "#";
-    gate.textContent = "Signup complete. The EXE release has not been uploaded yet.";
   } else {
     downloadBtn.classList.add("disabled");
     downloadBtn.href = "#";
@@ -104,8 +100,8 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-const signupForm = document.getElementById("signupForm");
-if (signupForm) {
+const signupForm = document.getElementById("signup");
+if (signup) {
   signupForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const data = loadData();
@@ -127,7 +123,6 @@ if (signupForm) {
       ? "Welcome back. Your download is unlocked."
       : "Account created. Your download is unlocked.";
     updateDownloadState();
-    document.getElementById("download").scrollIntoView({ behavior: "smooth", block: "center" });
   });
 }
 
